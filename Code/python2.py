@@ -1,3 +1,5 @@
+	import random
+	
 	# INSTRUCTIONS
 
 	# In case it is not clear, the Question appears first, then examples, then any hints and finally the function that you need to complete appears underneath:
@@ -30,7 +32,11 @@
 	# How does a for loop iterate through a string?
 
 def one(input):
-	return ""
+	repeated = ""
+	for x in input:
+		repeated = repeated + str(x)+str(x)+str(x)
+	return repeated
+
 
 	# <QUESTION 2>
 
@@ -48,7 +54,14 @@ def one(input):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(input):
-    return False
+	x = input
+	for i in range(1,input):
+		if 	input % i == 0:
+			return False
+	else:
+		return True	
+	return x
+
 
 	# <QUESTION 3>
 
@@ -65,7 +78,12 @@ def two(input):
 	# What happens if you multiply a string by a number?
 
 def three(a):
-	return 1
+   	n1= int("%s" %(a))
+	n2 = int("%s%s"%(a,a))
+	n3 = int("%s%s%s"%(a,a,a))
+	n4 = int("%s%s%s%s"%(a,a,a,a))
+	return n1+n2+n3+n4
+	
 
 	# <QUESTION 4>
 
@@ -94,7 +112,16 @@ def three(a):
 	# How would you seperate a string into characters?
 
 def four(input1, input2):
-	return ""
+	a = len(input1)
+	b = len (input2)
+    	if a != b:
+        	return False
+    	else:
+        	result = ""
+        for i in range(a):
+            result += input1[i]
+            result += input2[i]
+	return result
 
 	# <QUESTION 5>
 
@@ -111,7 +138,12 @@ def four(input1, input2):
 	# The random module contains a function called randint.
 
 def five():
-    return []
+	random_list=[]
+	for i in range(0,5):
+    		n = random.randint(100,202)
+    	if n % 2==0:
+        	random_list.append(n)
+	return random_list
 
 	# <QUESTION 6>
 
@@ -130,7 +162,13 @@ def five():
 	# There are no hints for this question.
     
 def six(input):
-	return False
+	
+	x = str(input.lower())
+	if x.endswith("py"):
+		return True
+	else:
+		return False
+    
 
 	# <QUESTION 7>
 
@@ -154,7 +192,15 @@ def six(input):
 	# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-	return False
+	if abs(a-b) == abs(b-c):
+		return True
+	else: 
+		return False
+
+	
+
+
+	
 
 	# <QUESTION 8>
 
@@ -172,7 +218,13 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(input,  a):
-	return ""
+	if len(input) < a:
+		return False
+	else:
+		middle_character = input.find(len(input)/2)
+		minus_string = input[middle_character-(a/2)]+input[middle_character+(a/2)]
+		outcome = input - minus_string
+	return outcome
 
 	# <QUESTION 9>
 
